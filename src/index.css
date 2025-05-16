@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-slate-800 leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-slate-900 leading-tight font-bold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl mb-4 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-slate-600 max-w-3xl mx-auto text-center mb-12;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md text-base font-medium shadow-sm transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-900 text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-blue-900 border-blue-900 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  @apply opacity-0 transition-opacity duration-700 ease-in-out;
+}
+
+.fade-in.appear {
+  @apply opacity-100;
+}
+
+.slide-up {
+  @apply translate-y-8 opacity-0 transition-all duration-700 ease-in-out;
+}
+
+.slide-up.appear {
+  @apply translate-y-0 opacity-100;
+}
+
+.scale-in {
+  @apply scale-95 opacity-0 transition-all duration-500 ease-in-out;
+}
+
+.scale-in.appear {
+  @apply scale-100 opacity-100;
+}
