@@ -90,17 +90,6 @@ export const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-xl absolute top-full left-0 right-0 transition-all duration-300">
           <nav className="container py-4 flex flex-col space-y-4 items-center">
-            {/* Mobile Logo with same gradient style */}
-            <a href="#home" className="flex items-center space-x-2 mb-4">
-              <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-black via-red-600 to-green-600 bg-clip-text text-transparent">
-                ONE
-              </span>
-              <img src={logo} alt="One Tribe Logo" className="h-10 sm:h-12 mx-2" />
-              <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-black via-red-600 to-green-600 bg-clip-text text-transparent">
-                TRIBE
-              </span>
-            </a>
-
             {navLinks.map((link) => (
               <a 
                 key={link.name}
