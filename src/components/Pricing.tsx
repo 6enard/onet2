@@ -10,6 +10,10 @@ export const Pricing: React.FC = () => {
       tag: 'Regular',
       color: 'border-green-700 text-green-700',
       buttonColor: 'bg-green-700 text-white hover:bg-green-800',
+      features: [
+        'Access to all classes',
+        'Open mat sessions',
+      ],
     },
     {
       name: 'Unlimited Training',
@@ -19,6 +23,10 @@ export const Pricing: React.FC = () => {
       color: 'bg-green-700 text-white border-green-700',
       buttonColor: 'bg-white text-green-700 hover:bg-slate-100',
       isPopular: true,
+      features: [
+        'Access to all classes',
+        'Open mat sessions',
+      ],
     },
     {
       name: 'Drop-in',
@@ -27,6 +35,9 @@ export const Pricing: React.FC = () => {
       tag: 'Single Class',
       color: 'border-black text-black',
       buttonColor: 'bg-black text-white hover:bg-gray-900',
+      features: [
+        'Access to one class only',
+      ],
     }
   ];
 
@@ -42,7 +53,7 @@ export const Pricing: React.FC = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`rounded-xl border p-8 shadow-md transition-transform duration-300 hover:scale-105 slide-up ${plan.color}`}
+              className={`relative rounded-xl border p-8 shadow-md transition-transform duration-300 hover:scale-105 slide-up ${plan.color}`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {plan.isPopular && (
@@ -57,14 +68,12 @@ export const Pricing: React.FC = () => {
                 <p className="text-sm">{plan.tag}</p>
               </div>
               <ul className="mb-6 space-y-2 text-sm text-slate-600">
-                <li className="flex items-start">
-                  <Check className="w-5 h-5 text-green-600 mr-2" />
-                  <span>Access to all classes</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-5 h-5 text-green-600 mr-2" />
-                  <span>Open mat sessions</span>
-                </li>
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
               </ul>
               <a
                 href="#contact"

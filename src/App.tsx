@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { Programs } from './components/Programs';
 import { Schedule } from './components/Schedule';
 import { Instructors } from './components/Instructors';
-import { Testimonials } from './components/Testimonials';
 import { Gallery } from './components/Gallery';
 import { Pricing } from './components/Pricing';
 import { Contact } from './components/Contact';
@@ -18,8 +17,7 @@ function App() {
         <Hero />
         <Programs />
         <Schedule />
-        <Instructors />
-        <Testimonials />
+        <Instructors />     
         <Gallery />
         <Pricing />
         <Contact />
