@@ -102,7 +102,7 @@ export const Header: React.FC = () => {
             ))}
             <a 
               href="#contact" 
-              className="btn btn-primary w-full text-center"
+              className="btn btn-primary w-full text-center bg-red-600 hover:bg-red-500"
               onClick={() => setIsMenuOpen(false)}
             >
               Join Now
