@@ -6,42 +6,52 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
+// Import images from IMG-20250518-WA0023 to IMG-20250518-WA0042
+import img1 from './IMG-20250518-WA0023.jpg';
+import img2 from './IMG-20250518-WA0024.jpg';
+import img3 from './IMG-20250518-WA0025.jpg';
+import img4 from './IMG-20250518-WA0026.jpg';
+import img5 from './IMG-20250518-WA0027.jpg';
+import img6 from './IMG-20250518-WA0028.jpg';
+import img7 from './IMG-20250518-WA0029.jpg';
+import img8 from './IMG-20250518-WA0030.jpg';
+import img9 from './IMG-20250518-WA0031.jpg';
+import img10 from './IMG-20250518-WA0032.jpg';
+import img11 from './IMG-20250518-WA0033.jpg';
+import img12 from './IMG-20250518-WA0034.jpg';
+import img13 from './IMG-20250518-WA0035.jpg';
+import img14 from './IMG-20250518-WA0036.jpg';
+import img15 from './IMG-20250518-WA0037.jpg';
+import img16 from './IMG-20250518-WA0038.jpg';
+import img17 from './IMG-20250518-WA0039.jpg';
+import img18 from './IMG-20250518-WA0040.jpg';
+import img19 from './IMG-20250518-WA0041.jpg';
+import img20 from './IMG-20250518-WA0042.jpg';
+
 export const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
-    {
-      src: 'https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg',
-      alt: 'BJJ training on the mats',
-    },
-    {
-      src: 'https://images.pexels.com/photos/7045393/pexels-photo-7045393.jpeg',
-      alt: 'Students practicing techniques',
-    },
-    {
-      src: 'https://images.pexels.com/photos/6956400/pexels-photo-6956400.jpeg',
-      alt: 'Competition preparation',
-    },
-    {
-      src: 'https://images.pexels.com/photos/6295858/pexels-photo-6295858.jpeg',
-      alt: 'Kids class training session',
-    },
-    {
-      src: 'https://images.pexels.com/photos/8428030/pexels-photo-8428030.jpeg',
-      alt: 'Academy facility',
-    },
-    {
-      src: 'https://images.pexels.com/photos/6253298/pexels-photo-6253298.jpeg',
-      alt: 'Belt promotion ceremony',
-    },
-    {
-      src: 'https://images.pexels.com/photos/8428027/pexels-photo-8428027.jpeg',
-      alt: 'Students during warm-up',
-    },
-    {
-      src: 'https://images.pexels.com/photos/9610869/pexels-photo-9610869.jpeg',
-      alt: 'Team photo after tournament',
-    },
+    { src: img1, alt: 'Gallery image 1' },
+    { src: img2, alt: 'Gallery image 2' },
+    { src: img3, alt: 'Gallery image 3' },
+    { src: img4, alt: 'Gallery image 4' },
+    { src: img5, alt: 'Gallery image 5' },
+    { src: img6, alt: 'Gallery image 6' },
+    { src: img7, alt: 'Gallery image 7' },
+    { src: img8, alt: 'Gallery image 8' },
+    { src: img9, alt: 'Gallery image 9' },
+    { src: img10, alt: 'Gallery image 10' },
+    { src: img11, alt: 'Gallery image 11' },
+    { src: img12, alt: 'Gallery image 12' },
+    { src: img13, alt: 'Gallery image 13' },
+    { src: img14, alt: 'Gallery image 14' },
+    { src: img15, alt: 'Gallery image 15' },
+    { src: img16, alt: 'Gallery image 16' },
+    { src: img17, alt: 'Gallery image 17' },
+    { src: img18, alt: 'Gallery image 18' },
+    { src: img19, alt: 'Gallery image 19' },
+    { src: img20, alt: 'Gallery image 20' },
   ];
 
   const openModal = (src: string) => {
@@ -93,7 +103,6 @@ export const Gallery: React.FC = () => {
           ))}
         </Swiper>
 
-        {/* Image Modal */}
         {selectedImage && (
           <div
             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
