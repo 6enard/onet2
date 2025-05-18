@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Sword, Heart } from 'lucide-react';
+import { Users, Award, Sword} from 'lucide-react';
 
 export const Programs: React.FC = () => {
   const programs = [
@@ -21,12 +21,7 @@ export const Programs: React.FC = () => {
       icon: <Award className="w-12 h-12 text-black" />,
       features: ['Tournament strategy', 'Conditioning and preparation', 'Mental performance coaching']
     },
-    {
-      title: 'Kids Program',
-      description: 'Our kids program instills discipline, builds confidence, and teaches self-defense in a fun, engaging, and supportive environment.',
-      icon: <Heart className="w-12 h-12 text-green-700" />,
-      features: ['Age-appropriate curriculum', 'Focus on anti-bullying', 'Character development']
-    }
+  
   ];
 
   return (
@@ -37,7 +32,7 @@ export const Programs: React.FC = () => {
           Whether you're a beginner or an experienced practitioner, we have a program designed to meet your goals.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
           {programs.map((program, index) => (
             <div 
               key={program.title} 

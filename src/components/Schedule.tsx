@@ -1,19 +1,9 @@
 import React, { useState } from "react";
-import { Clock } from "lucide-react";
-
-// Import your images (replace with actual paths or URLs)
-import wrestlingImg from "./wrestling.jpg";
-import kickboxingImg from "./kickboxing.jpg";
-import nogiImg from "./nogi.jpg";
-import giImg from "./gi.jpg";
-import mmaImg from "./mma.jpg";
-import judoImg from "./gi.jpg";
 
 type Program = {
   name: string;
   time: string;
   level: string;
-  image: string;
   description: string;
 };
 
@@ -30,7 +20,6 @@ const scheduleData: DaySchedule[] = [
         name: "Wrestling",
         time: "18:00 - 19:30",
         level: "All Levels",
-        image: wrestlingImg,
         description:
           "A combat sport focusing on grappling techniques, takedowns, and control. Perfect for building strength and learning how to dominate opponents on the mat.",
       },
@@ -38,7 +27,6 @@ const scheduleData: DaySchedule[] = [
         name: "Kickboxing",
         time: "19:30 - 20:30",
         level: "All Levels",
-        image: kickboxingImg,
         description:
           "A striking-based martial art that combines punches, kicks, and footwork, ideal for self-defense and cardio fitness.",
       },
@@ -51,7 +39,6 @@ const scheduleData: DaySchedule[] = [
         name: "Nogi",
         time: "12:00 - 13:30",
         level: "All Levels",
-        image: nogiImg,
         description:
           "Brazilian Jiu-Jitsu training without the gi, emphasizing speed, leverage, and control in grappling techniques.",
       },
@@ -59,7 +46,6 @@ const scheduleData: DaySchedule[] = [
         name: "Nogi",
         time: "18:00 - 20:00",
         level: "All Levels",
-        image: nogiImg,
         description:
           "A style of Brazilian Jiu-Jitsu practiced without the traditional gi, focusing on grappling techniques using grips on the opponent's body instead of clothing.",
       },
@@ -72,7 +58,6 @@ const scheduleData: DaySchedule[] = [
         name: "Gi",
         time: "18:00 - 20:00",
         level: "All Levels",
-        image: giImg,
         description:
           "Brazilian Jiu-Jitsu training using the gi, which allows for more control and submission options by gripping the clothing.",
       },
@@ -85,7 +70,6 @@ const scheduleData: DaySchedule[] = [
         name: "Nogi",
         time: "12:00 - 13:30",
         level: "All Levels",
-        image: nogiImg,
         description:
           "Brazilian Jiu-Jitsu training without the gi, emphasizing speed, leverage, and control in grappling techniques.",
       },
@@ -93,7 +77,6 @@ const scheduleData: DaySchedule[] = [
         name: "Nogi",
         time: "18:00 - 20:00",
         level: "All Levels",
-        image: nogiImg,
         description:
           "Brazilian Jiu-Jitsu training without the gi, emphasizing speed, leverage, and control in grappling techniques.",
       },
@@ -106,7 +89,6 @@ const scheduleData: DaySchedule[] = [
         name: "Kickboxing",
         time: "18:00 - 19:00",
         level: "All Levels",
-        image: kickboxingImg,
         description:
           "Striking-based training focusing on punches, kicks, and combinations. A great way to improve fitness and learn powerful self-defense skills.",
       },
@@ -114,7 +96,6 @@ const scheduleData: DaySchedule[] = [
         name: "MMA",
         time: "19:00 - 20:30",
         level: "Advanced",
-        image: mmaImg,
         description:
           "Mixed Martial Arts combines striking and grappling techniques from multiple disciplines. Designed for advanced students to develop versatile fighting skills.",
       },
@@ -127,7 +108,6 @@ const scheduleData: DaySchedule[] = [
         name: "Striking",
         time: "10:30 - 11:30",
         level: "All Levels",
-        image: kickboxingImg,
         description:
           "A high-intensity class focused on boxing and kickboxing fundamentals. Great for building speed, power, and agility in striking.",
       },
@@ -135,7 +115,6 @@ const scheduleData: DaySchedule[] = [
         name: "Gi/Nogi Open Mat",
         time: "11:30 - 13:00",
         level: "All Levels",
-        image: giImg,
         description:
           "Open mat session where students can practice techniques in either gi or nogi. Ideal for sparring and skill refinement in a relaxed environment.",
       },
@@ -148,7 +127,6 @@ const scheduleData: DaySchedule[] = [
         name: "Judo",
         time: "11:00 - 13:30",
         level: "All Levels",
-        image: judoImg,
         description:
           "Traditional Japanese martial art focusing on throws and ground grappling techniques. Suitable for all skill levels.",
       },
@@ -169,13 +147,13 @@ const daysShort = [
 const getLevelColor = (level: string) => {
   switch (level) {
     case "Beginner":
-      return "bg-green-100 text-green-800"; // Green for beginner
+      return "bg-green-100 text-green-800";
     case "Advanced":
-      return "bg-red-100 text-red-800"; // Red for advanced
+      return "bg-red-100 text-red-800";
     case "Kids":
-      return "bg-yellow-100 text-yellow-800"; // Yellow for kids
+      return "bg-yellow-100 text-yellow-800";
     default:
-      return "bg-black text-white"; // Black for All Levels or others
+      return "bg-black text-white";
   }
 };
 
@@ -202,8 +180,8 @@ export const Schedule: React.FC = () => {
               onClick={() => setActiveDay(day.id)}
               className={`px-5 py-2 rounded-full font-semibold transition-all ${
                 activeDay === day.id
-                  ? "bg-black text-white  border-red-600"
-                  : "bg-white text-black  border-green-600 hover:bg-green-600 hover:text-white"
+                  ? "bg-black text-white border-red-600"
+                  : "bg-white text-black border-green-600 hover:bg-green-600 hover:text-white"
               }`}
             >
               {day.label}
@@ -226,55 +204,40 @@ export const Schedule: React.FC = () => {
                   <th className="px-6 py-3 text-left text-sm font-semibold border border-white">
                     Level
                   </th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold border border-white">
-                    Photo
-                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {activeSchedule?.programs.map((program, index) => (
-                  <tr key={index} className="hover:bg-green-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap flex items-center text-black">
-                      <Clock className="w-4 h-4 text-gray-600 mr-2" />
-                      <span className="text-sm font-medium">{program.time}</span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-black font-semibold">
-                      {program.name}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span
-                        className={`px-3 py-1 text-xs font-semibold rounded-full ${getLevelColor(
-                          program.level
-                        )}`}
+                  <React.Fragment key={index}>
+                    <tr className="hover:bg-green-50 transition-colors">
+                      <td className="px-6 py-3 whitespace-nowrap text-sm text-gray-900">
+                        {program.time}
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-sm font-semibold text-black">
+                        {program.name}
+                      </td>
+                      <td className="px-6 py-3 whitespace-nowrap text-sm">
+                        <span
+                          className={`inline-block px-2 py-1 rounded-full text-xs font-semibold ${getLevelColor(
+                            program.level
+                          )}`}
+                        >
+                          {program.level}
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        colSpan={3}
+                        className="px-6 py-2 text-sm text-gray-600 italic bg-gray-50"
                       >
-                        {program.level}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <img
-                        src={program.image}
-                        alt={program.name}
-                        className="w-16 h-16 object-cover rounded-lg border-2 border-gray-300"
-                      />
-                    </td>
-                  </tr>
+                        {program.description}
+                      </td>
+                    </tr>
+                  </React.Fragment>
                 ))}
               </tbody>
             </table>
-          </div>
-
-          {/* Description below table */}
-          <div className="p-4 bg-gray-50 border-t border-gray-200">
-            {activeSchedule?.programs.length ? (
-              <div>
-                <h3 className="text-lg font-semibold mb-2 text-black">
-                  {activeSchedule.programs[0].name}
-                </h3>
-                <p className="text-gray-700">{activeSchedule.programs[0].description}</p>
-              </div>
-            ) : (
-              <p className="text-gray-700">No classes scheduled for this day.</p>
-            )}
           </div>
         </div>
       </div>

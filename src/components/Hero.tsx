@@ -58,7 +58,6 @@ export const Hero: React.FC = () => {
               options={{
                 strings: [
                   'Where warriors train and community thrives.',
-                  'Strength. Discipline. Brotherhood.',
                   'Train BJJ. Live Better.'
                 ],
                 autoStart: true,
@@ -70,7 +69,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <p className="text-white/90 text-base md:text-lg mb-8 slide-up">
-            Located in the heart of Nairobi, our gym welcomes everyone from beginners to seasoned competitors. With a growing community, we offer an affordable path to mastering Brazilian Jiu-Jitsu.
+            Located in the heart of Nairobi, our gym welcomes everyone from beginners to seasoned competitors. With a growing community, we offer an affordable path to mastering Brazilian Jiu-Jitsu and mixed martial arts.
           </p>
 
           {/* Only Two Buttons */}
